@@ -1,11 +1,12 @@
 package com.aleskapps.weather.map
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.aleskapps.weather.R
 import com.aleskapps.weather.databinding.ActivityMapBinding
+import com.aleskapps.weather.forecast.ForecastActivity
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 
@@ -39,4 +40,11 @@ class MapActivity : MvpAppCompatActivity(), MapView, OnMapReadyCallback {
         mMap.setOnCameraIdleListener { showForecastButton.visibility = View.VISIBLE }
     }
 
+    override fun showForecastView() {
+        val intent = Intent(this, ForecastActivity::class.java).also {
+            it.putExtra(getString(R.string.lat_extra), mMap.cameraPosition.target.latitude)
+            it.putExtra(getString(R.string.lon_extra), mMap.cameraPosition.target.longitude)
+        }
+        startActivity(intent)
+    }
 }

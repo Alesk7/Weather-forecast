@@ -7,7 +7,7 @@ import com.arellomobile.mvp.MvpPresenter
 class MapPresenter: MvpPresenter<MapView>() {
 
     fun onShowForecastClicked() {
-
+        viewState.showForecastView()
     }
 
 }
