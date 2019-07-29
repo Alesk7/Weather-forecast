@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="showForecastButtonTitle">Show forecast</string>
+</resources>
