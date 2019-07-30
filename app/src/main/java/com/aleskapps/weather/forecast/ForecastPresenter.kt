@@ -13,13 +13,14 @@ import kotlin.collections.ArrayList
 @InjectViewState
 class ForecastPresenter: MvpPresenter<ForecastView>() {
 
-    private val forecastRepository = ForecastRepository("8c6872db382cf7e3ab5016108959e627")
+    private lateinit var forecastRepository: ForecastRepository
     lateinit var place: Place
 
     @SuppressLint("CheckResult")
-    fun onCreate(place: Place) {
+    fun onCreate(place: Place, apiKey: String) {
         if(!isInRestoreState(viewState)) {
             this.place = place
+            forecastRepository = ForecastRepository(apiKey)
             forecastRepository.getFiveDaysForecastByCoordinats(place.latitude, place.longitude)
                 .doOnSubscribe { viewState.showLoadingView() }
                 .doFinally { viewState.hideLoadingView() }

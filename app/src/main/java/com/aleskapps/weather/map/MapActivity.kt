@@ -27,6 +27,7 @@ class MapActivity : MvpAppCompatActivity(), MapView, OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.title = getString(R.string.title_activity_maps)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_map)
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)

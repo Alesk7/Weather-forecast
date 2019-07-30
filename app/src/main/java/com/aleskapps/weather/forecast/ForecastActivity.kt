@@ -21,9 +21,11 @@ class ForecastActivity : MvpAppCompatActivity(), ForecastView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.title = getString(R.string.title_activity_forecast)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_forecast)
         forecastAdapter = ForecastAdapter(this)
-        presenter.onCreate(intent.getSerializableExtra(getString(R.string.place_extra)) as Place)
+        presenter.onCreate(intent.getSerializableExtra(getString(R.string.place_extra)) as Place, getString(R.string.openweather_API_KEY))
     }
 
     override fun onStart() {
@@ -48,4 +50,5 @@ class ForecastActivity : MvpAppCompatActivity(), ForecastView {
     override fun showToastMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
+
 }
