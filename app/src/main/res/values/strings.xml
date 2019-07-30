@@ -4,7 +4,8 @@
     <string name="place_extra">place</string>
 
     <string name="showForecastButtonTitle">Show forecast</string>
-    
+
+    <string name="coordinatsPattern">%f, %f</string>
     <string name="celsiusTempPattern">%s ℃</string>
     <string name="metricWindSpeedPattern">%s m/s</string>
     <string name="pressurePattern">%s hPa</string>

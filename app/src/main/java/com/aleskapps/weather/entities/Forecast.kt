@@ -8,7 +8,7 @@ data class Forecast (
     @SerializedName("main")
     val weather: Weather,
     @SerializedName("weather")
-    val weatherDescription: WeatherDescription,
+    val weatherDescription: List<WeatherDescription>,
     val clouds: Clouds,
     val wind: Wind,
     @SerializedName("dt_txt")
