@@ -4,4 +4,17 @@
     <string name="place_extra">place</string>
 
     <string name="showForecastButtonTitle">Show forecast</string>
+    
+    <string name="celsiusTempPattern">%s ℃</string>
+    <string name="metricWindSpeedPattern">%s m/s</string>
+    <string name="pressurePattern">%s hPa</string>
+    <string name="percentagePattern">%s %</string>
+    <string name="dailyTemp1Pattern">12 am - %s ℃</string>
+    <string name="dailyTemp2Pattern">3 am - %s ℃</string>
+    <string name="dailyTemp3Pattern">6 am - %s ℃</string>
+    <string name="dailyTemp4Pattern">9 am - %s ℃</string>
+    <string name="dailyTemp5Pattern">12 pm - %s ℃</string>
+    <string name="dailyTemp6Pattern">3 pm - %s ℃</string>
+    <string name="dailyTemp7Pattern">6 pm - %s ℃</string>
+    <string name="dailyTemp8Pattern">9 pm - %s ℃</string>
 </resources>
