@@ -1,7 +1,9 @@
 package com.aleskapps.weather.forecast
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.aleskapps.weather.R
 import com.aleskapps.weather.databinding.ActivityForecastBinding
@@ -41,5 +43,10 @@ class ForecastActivity : MvpAppCompatActivity(), ForecastView {
     override fun setForecast(forecast: List<ForecastViewModel>) {
         forecastAdapter.items = forecast
         forecastAdapter.notifyDataSetChanged()
+        Log.i("FORECAST", forecastAdapter.itemCount.toString())
+    }
+
+    override fun showToastMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }

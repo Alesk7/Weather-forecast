@@ -6,4 +6,5 @@ interface ForecastView: MvpView {
     fun setForecast(forecast: List<ForecastViewModel>)
     fun showLoadingView()
     fun hideLoadingView()
+    fun showToastMessage(message: String)
 }

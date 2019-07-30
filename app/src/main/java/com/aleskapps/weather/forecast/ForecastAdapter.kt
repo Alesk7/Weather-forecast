@@ -1,6 +1,7 @@
 package com.aleskapps.weather.forecast
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +25,7 @@ class ForecastAdapter(
 
         fun bind(item: ForecastViewModel) {
             binding.forecast = item
+            Log.i("CLOUDS", item.clouds)
             binding.executePendingBindings()
         }
 

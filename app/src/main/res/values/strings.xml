@@ -9,7 +9,7 @@
     <string name="celsiusTempPattern">%s ℃</string>
     <string name="metricWindSpeedPattern">%s m/s</string>
     <string name="pressurePattern">%s hPa</string>
-    <string name="percentagePattern">%s %</string>
+    <string name="percentagePattern">%s %%</string>
     <string name="dailyTemp1Pattern">12 am - %s ℃</string>
     <string name="dailyTemp2Pattern">3 am - %s ℃</string>
     <string name="dailyTemp3Pattern">6 am - %s ℃</string>
