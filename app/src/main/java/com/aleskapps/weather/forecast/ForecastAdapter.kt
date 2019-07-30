@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aleskapps.weather.databinding.ForecastListItemBinding
+import com.squareup.picasso.Picasso
 
 class ForecastAdapter(
     private val context: Context
@@ -25,8 +26,8 @@ class ForecastAdapter(
 
         fun bind(item: ForecastViewModel) {
             binding.forecast = item
-            Log.i("CLOUDS", item.clouds)
             binding.executePendingBindings()
+            Picasso.get().load(item.iconUrl).into(binding.icon)
         }
 
     }

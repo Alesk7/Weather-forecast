@@ -30,19 +30,26 @@ class ForecastPresenter: MvpPresenter<ForecastView>() {
 
     private fun transformForecast(forecast: List<Forecast>): List<ForecastViewModel> {
         val forecastList = ArrayList<ForecastViewModel>()
+        var day = -1
         forecast.forEach {
-            forecastList.add(ForecastViewModel(
-                SimpleDateFormat("d MMMM yyyy").format(Date(it.dataForecasted)),
-                String.format("%s, %s", it.weatherDescription[0].main, it.weatherDescription[0].description),
-                it.weather.temp.toInt().toString(),
-                it.weather.tempMax.toInt().toString(),
-                it.weather.tempMin.toInt().toString(),
-                it.wind.speed.toString(),
-                it.weather.pressure.toString(),
-                it.weather.humidity.toString(),
-                it.clouds.all.toString(),
-                it.weather.temp.toString()
-            ))
+            val date = Date(it.dataForecasted * 1000)
+            if(date.day > day) {
+                day = date.day
+                forecastList.add(
+                    ForecastViewModel(
+                        SimpleDateFormat("d MMMM yyyy").format(date),
+                        String.format("%s, %s", it.weatherDescription[0].main, it.weatherDescription[0].description),
+                        it.weather.temp.toInt().toString(),
+                        it.weather.tempMax.toInt().toString(),
+                        it.weather.tempMin.toInt().toString(),
+                        it.wind.speed.toString(),
+                        it.weather.pressure.toString(),
+                        it.weather.humidity.toString(),
+                        it.clouds.all.toString(),
+                        String.format("http://openweathermap.org/img/wn/%s@2x.png", it.weatherDescription[0].icon)
+                    )
+                )
+            }
         }
         return forecastList
     }

@@ -10,12 +10,5 @@ data class ForecastViewModel (
     val pressure: String = "",
     val humidity: String = "",
     val clouds: String = "",
-    val temp1: String = "",
-    val temp2: String = "",
-    val temp3: String = "",
-    val temp4: String = "",
-    val temp5: String = "",
-    val temp6: String = "",
-    val temp7: String = "",
-    val temp8: String = ""
+    val iconUrl: String = ""
 )

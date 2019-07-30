@@ -43,7 +43,6 @@ class ForecastActivity : MvpAppCompatActivity(), ForecastView {
     override fun setForecast(forecast: List<ForecastViewModel>) {
         forecastAdapter.items = forecast
         forecastAdapter.notifyDataSetChanged()
-        Log.i("FORECAST", forecastAdapter.itemCount.toString())
     }
 
     override fun showToastMessage(message: String) {
